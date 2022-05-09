@@ -1,0 +1,208 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+$purple: #7d2ae8;
+$darkpurple: #5b13b9;
+$darkgray: #333;
+$black: rgba(0 , 0, 0 , 0.2);
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins";
+}
+
+body{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $purple;
+    padding: 30px;
+
+    main{
+        position: relative;
+        max-width: 850px;
+        width: 100%;
+        background-color: #fff;
+        padding: 40px 30px;
+        box-shadow: 0 5px 10px $black;
+        perspective: 2700px;
+
+        .cover{
+            position: absolute;
+            height: 100%;
+            width: 50%;
+            top: 0;
+            left: 50%;
+            z-index: 100;
+            transition: all 1s ease;
+            transform-origin: left;
+            transform-style: preserve-3d;
+
+            &::before{
+                content: '';
+                position: absolute;
+                height: 100%;
+                width: 100%;
+                background-color: $purple;
+                opacity: 0.5;
+                z-index: 120;
+            }
+
+            img{
+                position: absolute;
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+                z-index: 12;
+                backface-visibility: hidden;
+            }
+
+            .text{
+                position: absolute;
+                z-index: 131;
+                height: 100%;
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+
+                .text-1, .text-2{
+                    font-size: 26px;
+                    font-weight: 600;
+                    color: #fff;
+                    text-align: center;
+                    backface-visibility: hidden;
+                }
+
+                .tetx-2{
+                    font-size: 15px;
+                    font-weight: 500;
+                }
+            }
+        }
+
+        #flip{
+            display: none;
+            &:checked ~ .cover{
+                transform: rotateY(-180deg);
+            }
+        }
+       
+        form{
+            height: 100%;
+            width: 100%;
+
+            .form-content{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                .log-in-form , .signup-form{
+                    width: calc(100% / 2 - 25px);
+
+                }
+
+                .title{
+                    position: relative;
+                    font-size: 24px;
+                    font-weight: 500;
+                    color: $darkgray;
+
+                    &::before{
+                        content: '';
+                        position: absolute;
+                        left: 0;
+                        bottom: 0;
+                        height: 3px;
+                        width: 25px;
+                        background-color: $purple;
+                    }
+                }
+
+                .input-boxes{
+                    margin-top: 30px;
+
+                    .input-box{
+                        height: 50px;
+                        width: 100%;
+                        display: flex;
+                        align-items: center;
+                        position: relative;
+                        margin: 10px 0;
+
+                        input{
+                            height: 100%;
+                            width: 100%;
+                            outline: none;
+                            border: none;
+                            padding: 0 30px;
+                            font-size: 16px;
+                            font-weight: 500;
+                            border-bottom: 2px solid $black;
+                            transition: all 0.3s ease;
+
+                            &:focus{
+                                border-color: $purple;
+                            }
+
+                            &:valid{
+                                border-color: $purple;
+                            }
+                        }
+
+                        i{
+                            position: absolute;
+                            color: $purple;
+                            font-size: 17px;
+                        }  
+                    }     
+                }
+
+                .button{
+
+                    margin-top: 40px;
+                    
+                    input{
+                        color: #fff;
+                        background-color: $purple;
+                        border-radius: 6px;
+                        padding: 0;
+                        cursor: pointer;
+                        transition: all 0.4s ease;
+
+                        &:hover{
+                            background-color: $darkpurple;
+                        }
+                    }
+                }
+
+                .text{
+                    font-size: 14px;
+                    font-weight: 500;
+                    color: $darkgray;
+
+                    a{
+                        text-decoration: none;
+
+                        &:hover{
+                            text-decoration: underline;
+                        }
+                    }
+                }
+
+                label{
+                    color: $purple;
+                    cursor: pointer;
+
+                    &:hover{
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+        
+    }
+}

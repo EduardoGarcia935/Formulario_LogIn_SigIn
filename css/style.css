@@ -1,0 +1,238 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Poppins";
+}
+
+body {
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #7d2ae8;
+  padding: 30px;
+}
+
+body main {
+  position: relative;
+  max-width: 850px;
+  width: 100%;
+  background-color: #fff;
+  padding: 40px 30px;
+  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  -webkit-perspective: 2700px;
+          perspective: 2700px;
+}
+
+body main .cover {
+  position: absolute;
+  height: 100%;
+  width: 50%;
+  top: 0;
+  left: 50%;
+  z-index: 100;
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+  -webkit-transform-origin: left;
+          transform-origin: left;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+}
+
+body main .cover::before {
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: #7d2ae8;
+  opacity: 0.5;
+  z-index: 120;
+}
+
+body main .cover img {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  z-index: 12;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+
+body main .cover .text {
+  position: absolute;
+  z-index: 131;
+  height: 100%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+body main .cover .text .text-1, body main .cover .text .text-2 {
+  font-size: 26px;
+  font-weight: 600;
+  color: #fff;
+  text-align: center;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+
+body main .cover .text .tetx-2 {
+  font-size: 15px;
+  font-weight: 500;
+}
+
+body main #flip {
+  display: none;
+}
+
+body main #flip:checked ~ .cover {
+  -webkit-transform: rotateY(-180deg);
+          transform: rotateY(-180deg);
+}
+
+body main form {
+  height: 100%;
+  width: 100%;
+}
+
+body main form .form-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body main form .form-content .log-in-form, body main form .form-content .signup-form {
+  width: calc(100% / 2 - 25px);
+}
+
+body main form .form-content .title {
+  position: relative;
+  font-size: 24px;
+  font-weight: 500;
+  color: #333;
+}
+
+body main form .form-content .title::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 25px;
+  background-color: #7d2ae8;
+}
+
+body main form .form-content .input-boxes {
+  margin-top: 30px;
+}
+
+body main form .form-content .input-boxes .input-box {
+  height: 50px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  margin: 10px 0;
+}
+
+body main form .form-content .input-boxes .input-box input {
+  height: 100%;
+  width: 100%;
+  outline: none;
+  border: none;
+  padding: 0 30px;
+  font-size: 16px;
+  font-weight: 500;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+body main form .form-content .input-boxes .input-box input:focus {
+  border-color: #7d2ae8;
+}
+
+body main form .form-content .input-boxes .input-box input:valid {
+  border-color: #7d2ae8;
+}
+
+body main form .form-content .input-boxes .input-box i {
+  position: absolute;
+  color: #7d2ae8;
+  font-size: 17px;
+}
+
+body main form .form-content .button {
+  margin-top: 40px;
+}
+
+body main form .form-content .button input {
+  color: #fff;
+  background-color: #7d2ae8;
+  border-radius: 6px;
+  padding: 0;
+  cursor: pointer;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+body main form .form-content .button input:hover {
+  background-color: #5b13b9;
+}
+
+body main form .form-content .text {
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+}
+
+body main form .form-content .text a {
+  text-decoration: none;
+}
+
+body main form .form-content .text a:hover {
+  text-decoration: underline;
+}
+
+body main form .form-content label {
+  color: #7d2ae8;
+  cursor: pointer;
+}
+
+body main form .form-content label:hover {
+  text-decoration: underline;
+}
+/*# sourceMappingURL=style.css.map */
